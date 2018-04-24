@@ -17,6 +17,7 @@ guiones colocar, como por ejemplo
 - calcular la suma de cada columna
 - mostrar todos los elementos de la diagonal principal
 - mostrar todos los elementos de la diagonal opuesta
+(la fila mas la columna, siempre da 4)
 - sumar todos los elementos de la izquierda
 
  */
@@ -59,6 +60,7 @@ public class JavaApplication95 {
         
         //declaracion de vector de cadena
         String [] orden =  {"El primer", "El segundo","El tercer","El cuarto","El quinto"};
+
         
         //creaciòn de matriz
         for (i = 0; i < m.length; i++) {
@@ -111,16 +113,16 @@ public class JavaApplication95 {
             System.out.println(m[i][i]);
                         
         }
-        /*
+        
         System.out.println("\n");
         
         //mostrar elementos de la diagonal opuesta
         for (i = 0; i < n; i++) {
-            System.out.println("Elementos de la diagonal opuesta");
-            System.out.println(m[j][j]);
+            System.out.println(orden [i] +" elemento de la diagonal opuesta");
+            System.out.println(m[i][n-1-i]);
                         
         }
-        */
+        
         
         System.out.println("\n");
         
@@ -132,9 +134,10 @@ public class JavaApplication95 {
                 
                 
             }
-            System.out.println(" La suma  " + i+ " del lado izquierdo es: " +acu);
+            System.out.println(" La suma del lado izquierdo es: " +acu);
             acu=0;
         }
 
     }
 }
+
