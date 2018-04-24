@@ -1,0 +1,140 @@
+/* - crear una matriz de 5.5, llenarla con un 0 en cada posicion
+y mostrarla con FORMA DE TABLA.
+   - Llenar la matriz con nùmero al azar entre 0 y 100
+
+Para imprimir en forma de tabla utilizar 
+ejemplo   soutF( "   % d ")
+se puede poner un tamaño, un numero completa un espacio con la cantidad
+d: entero int
+f: float o double
+s: cadena de caracteres
+System.out.printf(" %4d" , m[i][j]);
+System.out.println(" - -  -  -  -  -  -  ");
+se multicplican las filas por las columnas y podremos saber cuantos
+guiones colocar, como por ejemplo
+
+- calcular la suma de cada fila
+- calcular la suma de cada columna
+- mostrar todos los elementos de la diagonal principal
+- mostrar todos los elementos de la diagonal opuesta
+- sumar todos los elementos de la izquierda
+
+ */
+package javaapplication95;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class JavaApplication95 {
+
+    public static void main(String[] args) {
+
+        Scanner miScanner = new Scanner(System.in);
+
+        Random r = new Random();
+
+        int m[][];
+        m = new int[5][5];
+        
+        /*tambien se puede sumar con un vector de acumulador: ejemplo:
+        previamente declarandola en :
+        int [] ac= new int[5];
+        int [] ac= new int[5];        
+        ac[j] = m [i] [j];
+        af[i] = m [i][j];
+        */
+
+        int i;
+        int j = 0;
+        int filas;
+        int sumarFilas = 0;
+        int columnas;
+        int sumarColumnas = 0;
+        int dPrincipal;
+        int sumadPrincipal = 0;
+        int dOpuesta;
+        int sumadOpuesta = 0;
+        int n = m.length;
+        int acu=0;
+        
+        //declaracion de vector de cadena
+        String [] orden =  {"El primer", "El segundo","El tercer","El cuarto","El quinto"};
+        
+        //creaciòn de matriz
+        for (i = 0; i < m.length; i++) {
+
+            for (j = 0; j < m[0].length; j++) {
+                m[i][j] = r.nextInt(10);
+            }
+        }
+
+        //muestra de matriz
+        System.out.println("           Matriz");
+
+        for (i = 0; i < m.length; i++) {
+            System.out.println(" - - - - - - - - - - - - - - - - - - - ");
+            for (j = 0; j < m[0].length; j++) {
+                System.out.printf("| %4d", m[i][j]);
+
+            }
+            System.out.println("|");
+
+        }
+        
+        System.out.println("\n");
+        //suma de filas
+        for (i = 0; i < m.length; i++) {
+            for (j = 0; j < m[0].length; j++) {
+                sumarFilas = sumarFilas + m[i][j];
+
+            }
+            System.out.println("La suma de la fila " + i + " es: " + sumarFilas);
+            sumarFilas = 0;
+        }
+        System.out.println("\n");
+        
+        //suma de columnas
+        for (j = 0; j < m.length; j++) {
+            for (i = 0; i < m[0].length; i++) {
+                sumarColumnas = sumarColumnas + m[i][j];
+
+            }
+            System.out.println("La suma de la columna " + j + " es: " + sumarColumnas);
+            sumarColumnas = 0;
+        }
+        
+        System.out.println("\n");
+        
+        //mostrar elementos de la diagonal principal
+        for (i = 0; i < n; i++) {
+            System.out.println(orden[i] + " elemento diagonal principal:");
+            System.out.println(m[i][i]);
+                        
+        }
+        /*
+        System.out.println("\n");
+        
+        //mostrar elementos de la diagonal opuesta
+        for (i = 0; i < n; i++) {
+            System.out.println("Elementos de la diagonal opuesta");
+            System.out.println(m[j][j]);
+                        
+        }
+        */
+        
+        System.out.println("\n");
+        
+        
+        //suma del lado izquierdo
+        for (i = 0; i < n; i ++) {
+            for (j = 0; j < n/2; j ++) {
+                acu = acu + m[i][j];
+                
+                
+            }
+            System.out.println(" La suma  " + i+ " del lado izquierdo es: " +acu);
+            acu=0;
+        }
+
+    }
+}
