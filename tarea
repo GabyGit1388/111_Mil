@@ -1,0 +1,17 @@
+/*
+En una estaciòn meterològica registran la temperatura en 4 puntos de la ciudad,
+una vez por dia a la misma hora. Se necesita un programa q permita ingresos.
+Los valores de las mediciones (28 temperaturas) en informar.
+- promedio de las temperaturas
+- promedio en cada punto
+- promedio en cada dìa
+- dìa mas caluroso
+- lugar y dia de la menor temperatura
+
+
+LAS FILAS LOS PUNTOS
+LAS COLUMNAS LOS DIAS
+UNA MATRIZ DE 7 X 4 POR EJEMPLO = 28
+PROMEDIOS...SUMAR FILAS Y DIVIDIR // SUMAR COLUMNAS Y DIVIDIR
+PARA SABER EL DIA MAS CALUROSO....RECORRER LA MATRIZ Y ELEGIR EL MAYOR
+*/
